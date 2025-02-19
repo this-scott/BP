@@ -1,0 +1,19 @@
+services:
+  tailscale-version:
+    image: tailscale/tailscale:latest
+    container_name: ts-authkey-version
+    hostname: versioner
+    environment:
+      - TS_AUTHKEY=${tskey}
+      - TS_STATE_DIR=/var/lib/tailscale
+      - TS_USERSPACE=false
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    cap_add:
+      - net_admin
+    restart: unless-stopped
+  blogserver-version:
+    image: blogserver-version
+    network_mode: service:tailscale-version
+    env_file:
+      - .env
