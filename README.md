@@ -1,4 +1,4 @@
-# Overengineered Static File Serving Stack
+# Overengineered Static File Server
 
 ## Background / Blog: 
 
@@ -12,7 +12,7 @@ I'm also not sure where what I'm doing fits between backend and DevOps but CI/CD
 
 Kind of miss writing spaghetti code in ROSpy
 
-## Stack Diagrammed
+## Stack Diagramm
 ![BD](dist/static/BD.png)
 
 ## Planned Systems
